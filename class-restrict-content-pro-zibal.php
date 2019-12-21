@@ -16,7 +16,7 @@ if (!class_exists('RCP_Zibal')) {
 			add_action('rcp_gateway_Zibal', array($this, 'Zibal_Request'));
 
 			add_filter('rcp_payment_gateways', array($this, 'Zibal_Register'));
-
+			add_filter( 'rcp_is_zero_decimal_currency', '__return_true' );
 			if (!function_exists('Zibal_Currencies') && !function_exists('Zibal_Currencies')) {
 
 				add_filter('rcp_currencies', array($this, 'Zibal_Currencies'));
